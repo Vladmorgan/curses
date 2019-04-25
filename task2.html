@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+<script type="text/javascript">
+    let inTrianle1 = false;
+    let inTrianle2 = false;
+    let x1 = -1;
+    let x2 = 1;
+    let x3 = 0;
+
+    let y1 = 1;
+    let y2 = 1;
+    let y3 = 0;
+    let x0 = +prompt("введите координату точки по оси X", "");
+    let y0 = +prompt("введите координату точки по оси Y", "");
+    inTrianle1 = inArea(x1, x2, x3, x0, y1, y2, y3, y0);
+
+    function inArea(x1, x2, x3, x0, y1, y2, y3, y0) {
+
+
+        let a = (x1 - x0) * (y2 - y1) - (x2 - x1) * (y1 - y0);
+        let b = (x2 - x0) * (y3 - y2) - (x3 - x2) * (y2 - y0);
+        let c = (x3 - x0) * (y1 - y3) - (x1 - x3) * (y3 - y0);
+
+        if (a <= 0 && b <= 0 && c <= 0) {
+            return true;
+        } else if (a >= 0 && b >= 0 && c >= 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    let x4 = 0;
+    let x5 = -1;
+    let x6 = 1;
+
+    let y4 = 0;
+    let y5 = -1;
+    let y6 = -1;
+    inTrianle2 = inArea(x4, x5, x6, x0, y4, y5, y6, y0);
+    if (inTrianle1 == true || inTrianle2 == true) {
+        alert("точка попадает в область");
+
+    } else {
+        alert("точка не попадает в область");
+    }
+
+
+</script>
+
+
+</body>
+</html>
